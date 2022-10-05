@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+ <div class="container" align="center">
+    <h2>Изменение данных в БД </h2>
+  </div>
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <form method="POST" action="/upd">
+        <h5>Новая цена</h5>
+        <input type="number" name="price2" class="form-control">
+        <h3> </h3>
+        <button class="btn btn-primary btn-large" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Установить</button>
+        <h3> </h3>
+        <p><a class="btn btn-outline-primary" href="{{ url_for('sdb') }}">&laquo; Назад</a></p>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Новая цена</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Сохранить изменения?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+        <button type="submit" class="btn btn-primary">Да</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+</div>
+
+{% endblock %}

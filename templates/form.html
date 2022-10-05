@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body text="#3f74b4">
+	<basefont face="Areal, Verdana" size="2">
+		<h2>Типы Форм</h2>
+		<h4>(без функционала)</h4>
+		<form action="#" method="POST">
+			<table>
+				<tr>
+					<td align="right">
+						<font size="2">Имя: </font>
+					</td>
+					<td>
+						<input type="text" size="30" name="firstName">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<font size="2">Фамилия: </font>
+					</td>
+					<td>
+						<input type="text" size="30" name="lastName">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<font size="2">E-mail: </font>
+					</td>
+					<td>
+						<input type="text" size="30" name="mail">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<font>Пароль: </font>
+					</td>
+					<td>
+						<input type="password" size="30" name="pass">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<font size="2">Повтор пароля: </font>
+					</td>
+					<td>
+						<input type="password" size="30" name="passTwo">
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td height="40">
+						Укажите пол
+					</td>
+					<td>
+						Укажите ваше хобби
+					</td>
+				</tr>
+				<tr valign="top">
+					<td>
+						<font size="2">
+							<input type="radio" value="female" name="gender" id="female"> Женский<br/>
+							<input type="radio" value="male" name="gender" checked="checked" id="male"> Мужской<br/>
+							<input type="radio" value="undisclosed" name="gender" id="none"> Не указывать
+						</font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="checkbox" name="reading"> Чтение<br/>
+							<input type="checkbox" name="sport"> Спорт<br/>
+							<input type="checkbox" name="games" checked="checked"> Компьютерные игры<br/>
+							<input type="checkbox" name="tv"> Телевидение<br/>
+							<input type="checkbox" name="movies"> Кинофильмы
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td height="50">
+						<font size="2">
+							Укажите год рождения
+						</font>
+					</td>
+					<td>
+						<select>
+							<option value="1995" name="date">1995</option>
+							<option value="1994" name="date">1994</option>
+							<option value="1993" name="date">1993</option>
+							<option value="1992" name="date" selected="selected">1992</option>
+							<option value="1991" name="date">1991</option>
+							<option value="1990" name="date">1990</option>
+							<option value="1989" name="date">1989</option>
+							<option value="1988" name="date">1988</option>
+							<option value="1987" name="date">1987</option>
+							<option value="1986" name="date">1986</option>
+							<option value="1985" name="date">1985</option>
+							<option value="1984" name="date">1984</option>
+							<option value="1983" name="date">1983</option>
+						</select>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td>
+						<font size="2">
+							Укажите города проживания
+						</font>
+					</td>
+					<td>
+						<select size="6" multiple="multiple">
+							<option value="Moscow">Москва</option>
+							<option value="Paris">Париж</option>
+							<option value="NewYork">Нью-Йорк</option>
+							<option value="SaintPetersburg">Санкт-Петербург</option>
+							<option value="Berlin">Берлин</option>
+						</select>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td>
+						<font size="2">
+							Оставьте Ваш комментарий
+						</font>
+					</td>
+					<td>
+						<textarea rows="5" cols="25">{{names}}</textarea>
+					</td>
+				</tr>
+				<h1></h1>
+				<tr valign="top">
+					<td>
+						<font size="2">
+							Ваша фотография
+						</font>
+					</td>
+					<td>
+						<input type="file" name="avatar" size="15">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<input type="reset" value="Очистить">
+					</td>
+					<td>
+						<input type="submit" value="Отправить">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</basefont>
+</body>
+</html>
+
+{% endblock %}

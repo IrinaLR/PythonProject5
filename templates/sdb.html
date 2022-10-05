@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" align="center">
+    <h2>Выбор данных из БД </h2>
+</div>
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+
+<form method="POST" action="" >
+<label for="exampleDataList" class="form-label">Выберите продукт</label>
+<input name = "var" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+<datalist id="datalistOptions">
+    {% for i in results %}
+     <option >{{i[1]}}</option>
+    {% endfor %}
+</datalist>
+<h3> </h3>
+<button class="btn btn-primary btn-large" type="submit">Выбрать</button>
+<h3> </h3>
+</form>
+<div align="center">
+    {% if var2 %}
+  <div class="card text-white bg-light mb-3" style="width: 25rem;" align="center">
+   <div class="card-body" align="center">
+    <h4 class="card-title"></h4>
+    <h5 class="card-subtitle mb-2 text-muted">{{var01}}</h5>
+    <h4 class="card-title"></h4>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <h6 class="card-text text-primary">{{var2}} руб.</h6>
+    <a href="{{ url_for('upd') }}" class="btn btn-outline-primary stretched-link">Изменить цену&raquo;</a>
+   </div>
+  </div>
+   {% endif %}
+</div>
+</div>
+{% endblock %}
+    <!---
+  <label>Выберите продукт</label>
+<form method="POST" action="" >
+<select name = "var" class="form-select" multiple aria-label="multiple select example">
+    {% for i in results %}
+     <option >{{i[1]}}</option>
+     {% endfor %}
+</select>
+<h3> </h3>
+<button class="btn btn-primary btn-large" type="submit">Выбрать</button>
+    <h3> </h3>
+</form>
+<h5>Продукт = {{var01}}</h5>
+<h5>Цена = {{var2}}</h5>
+    <h3> </h3>
+<p><a class="btn btn-outline-primary" href="{{ url_for('upd') }}">Изменить &raquo;</a></p>
+-->
+
+
+
+
