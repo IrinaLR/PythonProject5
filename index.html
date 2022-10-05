@@ -1,0 +1,32 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+  <div align="center">
+      <h1> Веб-Приложение для Вертекс</h1>
+      <p class="text-secondary" >Аналитическая служба </p>
+      <a class="btn btn-primary w-25 p-2" href="{{ url_for('db') }}" role="button">Запись, Вывод, Экспорт данных &raquo;</a>
+      <a class="btn btn-success w-25 p-2" href="{{ url_for('sdb') }}" role="button">Выбор, Изменение данных &raquo;</a>
+      <a class="btn btn-secondary w-25 p-2" href="{{ url_for('tmn') }}" role="button">Фильтрация данных &raquo;</a>
+      <img src="/static/images/fon.jpg" class="img" width = 55% align = "center" alt="...">
+  </div>
+</div>
+<div class="row" align="center">
+    <div class="col-md-4">
+        <h2>Формы</h2>
+        <p> Виды</p>
+        <p><a class="btn btn-outline-primary" href="{{ url_for('form') }}">Далее &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Отправка</h2>
+        <p>Запись в txt</p>
+        <p><a class="btn btn-outline-primary" href="{{ url_for('sending') }}">Далее &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Вывод</h2>
+        <p>Вывод данных</p>
+        <p><a class="btn btn-outline-primary" href="{{ url_for('output') }}">Далее &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

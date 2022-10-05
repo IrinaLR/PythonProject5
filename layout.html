@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} MyWeb</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light"  style="background-color: #e3f2fd; position: fixed; top: 0;" >
+  <div class="container-fluid" >
+    <a class="navbar-brand" href="{{ url_for('home') }}">Главная</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('about') }}">О Вертекс</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Главная</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('about') }}">О Вертекс</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('tmn') }}">Тест</a>
+  </li>
+</ul>
+-->
+<!--
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('home') }}">Главная</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('about') }}">О Вертекс</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('tmn') }}">Тест</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('cat') }}"></a>
+  </li>
+</ul>
+ -->
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} - Ирина Рогайнис</p>
+        </footer>
+    </div>
+<script src="static/js/bootstrap.bundle.min.js" ></script></body>
+ {% block scripts %}{% endblock %}
+</html>
+
+
+

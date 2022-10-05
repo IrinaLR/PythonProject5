@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" align="center">
+    <h2>Фильтр данных</h2>
+</div>
+<div class="shadow-lg p-3 mb-5 bg-body rounded" >
+     <div class="container" align="center">
+        <h4> Экспорт и импорт российских регионов: таможенная статистика с детализацией до товаров за 2016-2021 гг.</h4>
+         <h5>(26 392 293 строк)</h5>
+     </div>
+<form method="post" action="/fl">
+        <label>Фильтр по полю "value"</label>
+        <input type="number" name="var0" class="form-control">
+<h6></h6>
+    <button class="btn btn-primary btn-large" type="submit">Применить</button>
+<h6></h6>
+    <div class="container text-secondary" align="center">
+        <p>Время выполнения операции {{tf|round(2)}} сек. </p>
+    </div>
+</form>
+    <div class="container" align="right">
+      <h5 class="fst-italic text-success"> sum(quantity) = {{counter|int}}</h5>
+    </div>
+<table class="table table-bordered table-hover" >
+  <thead>
+    <tr>
+      <th class="table-primary text-center" scope="col">#</th>
+      <th class="table-primary text-center" scope="col">month</th>
+      <th class="table-primary text-center" scope="col">country</th>
+      <th class="table-primary text-center" scope="col">code</th>
+      <th class="table-primary text-center" scope="col">value</th>
+      <th class="table-primary text-center" scope="col">netto</th>
+      <th class="table-primary text-center" scope="col">quantity</th>
+      <th class="table-primary text-center" scope="col">region</th>
+      <th class="table-primary text-center" scope="col">district</th>
+    </tr>
+  </thead>
+  {% for i in result_tmn %}
+    <tr>
+        <td class="text-center">{{loop.index}}</td>
+        <td class="text-center">{{i[0]}}</td>
+        <td class="text-center">{{i[1]}}</td>
+        <td class="text-center">{{i[2]}}</td>
+        <td class="text-center">{{i[3]|int}}</td>
+        <td class="text-center">{{i[4]|int}}</td>
+        <td class="text-center">{{i[5]|int}}</td>
+        <td class="text-center">{{i[6]}}</td>
+        <td class="text-center">{{i[7]}}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+</div>
+
+{% endblock %}
