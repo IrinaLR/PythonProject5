@@ -158,7 +158,7 @@ def tmn():
 def fl():
     global filter_tmn
     if request.method == 'POST':
-        filter_tmn = str(request.form['var0'])
+        filter_tmn = str(request.form['filter_tmn'])
     return redirect(url_for('tmn'))
 
 
@@ -211,4 +211,6 @@ def cat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
 
