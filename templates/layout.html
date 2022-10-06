@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,36 +22,6 @@
     </div>
   </div>
 </nav>
-
-<!--
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Главная</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('about') }}">О Вертекс</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('tmn') }}">Тест</a>
-  </li>
-</ul>
--->
-<!--
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('home') }}">Главная</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('about') }}">О Вертекс</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('tmn') }}">Тест</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('cat') }}"></a>
-  </li>
-</ul>
- -->
     <div class="container body-content">
         {% block content %}{% endblock %}
         <hr />
@@ -62,6 +32,5 @@
 <script src="static/js/bootstrap.bundle.min.js" ></script></body>
  {% block scripts %}{% endblock %}
 </html>
-
 
 
