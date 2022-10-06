@@ -34,7 +34,7 @@ session = Session(bind=engine)
 products = sqlalchemy.Table('Products', metadata, autoload=True)
 
 # global var
-select_product = 0
+select_product = None
 filter_tmn = None
 
 
@@ -88,7 +88,7 @@ def sdb():
         select_product = str(request.form['select_product'])
     price_if = None
     product_if = None
-    if select_product != 0:
+    if select_product is not None:
         results_if = [list(i) for i in session.query(products).filter_by(ProductName=select_product)]
         price_if = int(results_if[0][2])
         product_if = results_if[0][1]
@@ -211,6 +211,5 @@ def cat():
 
 if __name__ == "__main__":
     app.run(debug=True)  # (debug=False) for user
-
 
 
