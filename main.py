@@ -72,8 +72,8 @@ def db():
 @app.route('/add_data', methods=['POST'])  # insert and redirect after changes
 def add_data():
     product = request.form['product']
-    price = int(request.form['price'])
-    quantity = int(request.form['quantity'])  # form for new column
+    price = request.form['price']
+    quantity = request.form['quantity']  # form for new column
     query = products.insert({'ProductName': product, 'Price': price, 'Quantity': quantity})  # + name for new column
     session.execute(query)
     session.commit()
